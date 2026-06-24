@@ -91,5 +91,6 @@ http://127.0.0.1:5000
 
 ## Screenshots
 
-Screenshots coming soon.
+## Home Page
 
+![Job Tracker Home Page](screenshots/home-page.png)
