@@ -18,6 +18,12 @@
         <label>Job Title:</label><br>
         <input type="text" name="job_title" required><br><br>
 
+        <label>Date Applied:</label><br>
+        <input type="date" name="date_applied"><br><br>
+
+        <label>Job Link:</label><br>
+        <input type="url" name="job_link" placeholder="https://example.com/job-posting"><br><br>
+
         <label>Status:</label><br>
         <select name="status">
             <option value="Saved">Saved</option>
@@ -57,9 +63,18 @@
                 <li class="application-card">
                     <strong>{{ application["company"] }}</strong> - {{ application["job_title"] }}
                     <br>
-                    Status: {{ application["status"] }}
+                    <strong>Date Applied:</strong> {{ application["date_applied"] }}
                     <br>
-                    Notes: {{ application["notes"] }}
+                    <strong>Job Link:</strong>
+                    {% if application["job_link"] %}
+                        <a href="{{ application['job_link'] }}" target="_blank">View Posting</a>
+                    {% else %}
+                        None
+                    {% endif %}                   
+                    <br>
+                    <strong>Status:</strong> {{ application["status"] }}
+                    <br>
+                    <strong>Notes:</strong> {{ application["notes"] }}
                     
 
                     <br><br>
