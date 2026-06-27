@@ -109,11 +109,39 @@ button:hover {
 }
 
 .application-card h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
+    margin: 0 0 14px 0;
+    padding: 0;
+}
+
+.application-details {
+    margin: 0;
+    padding: 0;
 }
 
 .application-details p {
     margin: 6px 0;
     line-height: 1.4;
+}
+
+.card-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.card-actions form {
+    margin: 0;
+}
+
+.edit-form {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
 }

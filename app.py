@@ -87,12 +87,21 @@ def add_application():
 
     return redirect("/")
 
-@app.route("/update_status/<int:index>", methods=["POST"])
-def update_status(index):
+@app.route("/edit/<int:index>", methods=["POST"])
+def update_application(index):
     applications = load_applications()
 
     if 0 <= index < len(applications):
-        applications[index]["status"] = request.form.get("status")
+        applications[index] = {
+            "company": request.form.get("company"),
+            "job_title": request.form.get("job_title"),
+            "location": request.form.get("location"),
+            "date_applied": request.form.get("date_applied"),
+            "job_link": request.form.get("job_link"),
+            "status": request.form.get("status"),
+            "notes": request.form.get("notes")
+        }
+
         save_all_applications(applications)
 
     return redirect("/")
