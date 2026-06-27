@@ -11,11 +11,13 @@ This project also helped me practice turning a Python command-line program into 
 ## Features
 
 * Add new job applications
+* Track company, job title, location, date applied, job link, status, and notes
 * Save applications to a CSV file
-* View saved applications on the homepage
-* Update application status
+* View saved applications as styled application cards
+* Search applications by company, job title, location, status, or notes
+* Edit existing applications directly from the application card
 * Delete applications
-* Search applications by company, job title, status, or notes
+* Display status badges with different colors
 * Basic CSS styling for a cleaner interface
 
 ## Technologies Used
