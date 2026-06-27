@@ -64,25 +64,30 @@
         <ul>
             {% for application in applications %}
                 <li class="application-card">
-                    <strong>{{ application["company"] }}</strong> - {{ application["job_title"] }}
-                    <br>
-                    <strong>Location:</strong> {{ application["location"] }}
-                    <br>
-                    <strong>Date Applied:</strong> {{ application["date_applied"] }}
-                    <br>
-                    <strong>Job Link:</strong>
-                    {% if application["job_link"] %}
-                        <a href="{{ application['job_link'] }}" target="_blank">View Posting</a>
-                    {% else %}
-                        None
-                    {% endif %}                   
-                    <br>
-                    <strong>Status:</strong> {{ application["status"] }}
-                    <br>
-                    <strong>Notes:</strong> {{ application["notes"] }}
-                    
+                    <h3>{{ application["company"] }} - {{ application["job_title"] }}</h3>
 
-                    <br><br>
+                    <div class="application-details">
+                        <p><strong>Location:</strong> {{ application["location"] }}</p>
+                        <p><strong>Date Applied:</strong> {{ application["date_applied"] }}</p>
+
+                        <p>
+                            <strong>Job Link:</strong>
+                            {% if application["job_link"] %}
+                                <a href="{{ application['job_link'] }}" target="_blank">View Posting</a>
+                            {% else %}
+                                None
+                            {% endif %}
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            <span class="status-badge status-{{ application['status']|lower }}">
+                                {{ application["status"] }}
+                            </span>
+                        </p>
+
+                        <p><strong>Notes:</strong> {{ application["notes"] }}</p>
+                    </div>
                     <br><br>
                     <form action="/update_status/{{ loop.index0 }}" method="POST">
                         <label>Update Status:</label>
