@@ -82,12 +82,12 @@ http://127.0.0.1:5000
 
 ## Future Improvements
 
-* Add a date applied field
-* Add job location and job posting link fields
 * Improve the visual design
 * Add user authentication
 * Replace CSV storage with SQLite
 * Add dashboard statistics for application progress
+* Add status-based color labels
+* Deploy the application online
 
 ## Screenshots
 
