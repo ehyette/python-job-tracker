@@ -7,7 +7,7 @@ app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_FILE = os.path.join(BASE_DIR, "data", "applications.csv")
 
-FIELDNAMES = ["company", "job_title", "date_applied", "job_link", "status", "notes"]
+FIELDNAMES = ["company", "job_title", "location", "date_applied", "job_link", "status", "notes"]
 
 
 def load_applications():
@@ -57,6 +57,7 @@ def home():
             application for application in applications
             if search_query in application["company"].lower()
             or search_query in application["job_title"].lower()
+            or search_query in application["location"].lower()
             or search_query in application["date_applied"].lower()
             or search_query in application["job_link"].lower()
             or search_query in application["status"].lower()
@@ -75,6 +76,7 @@ def add_application():
     new_application = {
         "company": request.form.get("company"),
         "job_title": request.form.get("job_title"),
+        "location": request.form.get("location"),
         "date_applied": request.form.get("date_applied"),
         "job_link": request.form.get("job_link"),
         "status": request.form.get("status"),

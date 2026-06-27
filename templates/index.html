@@ -18,6 +18,9 @@
         <label>Job Title:</label><br>
         <input type="text" name="job_title" required><br><br>
 
+        <label>Location:</label><br>
+        <input type="text" name="location" placeholder="Remote, Hybrid, or City, State"><br><br>
+
         <label>Date Applied:</label><br>
         <input type="date" name="date_applied"><br><br>
 
@@ -45,7 +48,7 @@
             <input 
                 type="text" 
                 name="search" 
-                placeholder="Search by company, job title, status, or notes"
+                placeholder="Search by company, job title, location, status, or notes"
                 value="{{ search_query }}"
             >
             <button type="submit">Search</button>
@@ -62,6 +65,8 @@
             {% for application in applications %}
                 <li class="application-card">
                     <strong>{{ application["company"] }}</strong> - {{ application["job_title"] }}
+                    <br>
+                    <strong>Location:</strong> {{ application["location"] }}
                     <br>
                     <strong>Date Applied:</strong> {{ application["date_applied"] }}
                     <br>
